@@ -246,10 +246,7 @@ def print_dest(ip, rules):
 		if r.is_in_dest(ip):
 			print(r.raw)
 
-if __name__ == "__main__":
-	if len(sys.argv) < 3:
-		help()
-		exit(1)
+def main():
 	ip = get_ip_number(sys.argv[1])
 	files = sys.argv[2:]
 
@@ -263,4 +260,11 @@ if __name__ == "__main__":
 
 	print_dest(ip, rules)
 	print_src(ip, rules)
+
+if __name__ == "__main__":
+	if len(sys.argv) < 3:
+		help()
+	else:
+		main()
+
 
